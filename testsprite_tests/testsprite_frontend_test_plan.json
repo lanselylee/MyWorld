@@ -1,0 +1,324 @@
+[
+  {
+    "id": "TC001",
+    "title": "Verify Navigation Bar Alignment and Links",
+    "description": "Check that the top horizontal navigation bar is rendered with all links centered horizontally and that each link navigates to the correct page.",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Load the homepage"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the navigation bar is displayed horizontally at the top"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the navigation links are centered horizontally in the viewport"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the navigation bar contains links: Home, Profile/About Me, Portfolio/My Work, Contact"
+      },
+      {
+        "type": "action",
+        "description": "Click each navigation link one by one"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the app routes to the correct page for each link"
+      }
+    ]
+  },
+  {
+    "id": "TC002",
+    "title": "Homepage Hero Section Centering",
+    "description": "Ensure that the hero section's cartoon illustration, overlay text, and call-to-action buttons are horizontally and vertically centered across multiple screen sizes.",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Load the homepage on desktop viewport"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the cartoon hero image is horizontally and vertically centered"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify overlay text is centered over the hero image"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify call-to-action buttons are horizontally and vertically centered below or on the hero image"
+      },
+      {
+        "type": "action",
+        "description": "Resize viewport to tablet and mobile screen widths"
+      },
+      {
+        "type": "assertion",
+        "description": "Confirm all hero section elements remain properly centered vertically and horizontally on each viewport size"
+      }
+    ]
+  },
+  {
+    "id": "TC003",
+    "title": "Profile/About Page Content and Styling Validation",
+    "description": "Verify that the Profile/About page loads with bio, introduction, and skills content correctly, and that the styling conforms to the cartoon/comic theme with consistent typography and layout.",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to the Profile/About page"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify bio, introduction, and skills sections are present and contain expected text content"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the layout and typography style matches the cartoon/comic style as per design"
+      },
+      {
+        "type": "assertion",
+        "description": "Check that text sections are aligned and spaced consistently"
+      }
+    ]
+  },
+  {
+    "id": "TC004",
+    "title": "Portfolio/My Work Page Grid Display",
+    "description": "Check that the Portfolio/My Work page displays projects in a grid format with correct titles, images, and descriptions for each project. Validate that dashboard metrics are shown as specified.",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to the Portfolio/My Work page"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify that projects are displayed in a grid layout"
+      },
+      {
+        "type": "assertion",
+        "description": "For each project: verify image is visible and matches design specs"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify each project displays title and description text correctly"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify dashboard metrics are displayed for each project as required"
+      },
+      {
+        "type": "action",
+        "description": "Resize the viewport to mobile size"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the grid layout adapts responsively without truncation or misalignment"
+      }
+    ]
+  },
+  {
+    "id": "TC005",
+    "title": "Contact Page Layout and Placeholder Text",
+    "description": "Verify that the Contact page loads with a centered title and placeholder text 'Content coming soon!'. Ensure the layout remains consistent on desktop and mobile devices.",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to the Contact page"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the page contains a centered title related to Contact"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify placeholder text 'Content coming soon!' is visible and centered"
+      },
+      {
+        "type": "action",
+        "description": "Check the layout on desktop viewport"
+      },
+      {
+        "type": "assertion",
+        "description": "Confirm the layout is centered and visually balanced"
+      },
+      {
+        "type": "action",
+        "description": "Resize viewport to mobile viewport"
+      },
+      {
+        "type": "assertion",
+        "description": "Confirm layout remains centered and placeholder text is fully visible"
+      }
+    ]
+  },
+  {
+    "id": "TC006",
+    "title": "Reusable UI Components Render and Style Test",
+    "description": "Validate that each reusable UI component (ComicPanel, HalftoneBG, MeteorShower, SpeechBubble) renders correctly and their styles adhere to the cartoon/comic theme using Tailwind CSS.",
+    "category": "functional",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Render each UI component individually on a test page"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify ComicPanel renders with expected layout, borders, and color styling"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify HalftoneBG displays with correct background pattern and opacity"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify MeteorShower component shows expected animated or visual meteor elements"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify SpeechBubble displays text with correct shape and cartoon style"
+      },
+      {
+        "type": "assertion",
+        "description": "Confirm all components use Tailwind CSS classes as per configured styling rules"
+      }
+    ]
+  },
+  {
+    "id": "TC007",
+    "title": "Layout and Alignment Consistency Across Core Pages",
+    "description": "Confirm that after fixes, no layout or alignment issues remain on homepage, profile, portfolio, and contact pages, validated by visual checks and functional testing across major devices.",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate through homepage, profile/about, portfolio/my work, and contact pages on desktop"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify no misaligned elements or overflow issues on any page"
+      },
+      {
+        "type": "action",
+        "description": "Repeat navigation on tablet and mobile viewports"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify all page elements remain visually aligned and content is not cut-off or misplaced"
+      }
+    ]
+  },
+  {
+    "id": "TC008",
+    "title": "Navigation Link Accessibility and Keyboard Navigation",
+    "description": "Ensure that navigation links are accessible, focusable, and usable via keyboard navigation, complying with accessibility best practices.",
+    "category": "security",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Load homepage and focus on the navigation bar"
+      },
+      {
+        "type": "action",
+        "description": "Use keyboard Tab key to move focus through navigation links"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify each navigation link receives focus in logical order"
+      },
+      {
+        "type": "action",
+        "description": "Press Enter key on each focused navigation link"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify page navigates correctly upon keyboard activation"
+      }
+    ]
+  },
+  {
+    "id": "TC009",
+    "title": "Call-to-Action Buttons Functionality on Homepage",
+    "description": "Verify the homepage call-to-action buttons in the hero section respond correctly when clicked, navigating to appropriate pages or triggering expected actions.",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Load homepage"
+      },
+      {
+        "type": "assertion",
+        "description": "Identify call-to-action buttons in hero section"
+      },
+      {
+        "type": "action",
+        "description": "Click the portfolio exploration button"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify navigation to Portfolio/My Work page"
+      },
+      {
+        "type": "action",
+        "description": "Return to homepage and click contact button"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify navigation to Contact page"
+      }
+    ]
+  },
+  {
+    "id": "TC010",
+    "title": "Image Display and Loading Test for Cartoon Illustration",
+    "description": "Verify that the cartoon homepage image (cartoon1.png) loads successfully, is centered properly, and retains quality across screen resolutions.",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Load homepage"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify cartoon1.png image is displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify image is horizontally and vertically centered within hero section"
+      },
+      {
+        "type": "action",
+        "description": "Test image display on desktop, tablet, and mobile viewports"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify image quality remains consistent and no distortion occurs on resizing"
+      },
+      {
+        "type": "action",
+        "description": "Simulate slow network or failed image load"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify appropriate fallback or alt text is shown if image fails to load"
+      }
+    ]
+  }
+]

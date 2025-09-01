@@ -1,0 +1,17 @@
+{
+  "status": "commited",
+  "type": "frontend",
+  "scope": "codebase",
+  "localEndpoint": "http://localhost:3000",
+  "loginUser": "myworld",
+  "executionArgs": {
+    "projectName": "myworld",
+    "projectPath": "/Users/xiaomengli/Desktop/myworld",
+    "testIds": [],
+    "additionalInstruction": "Focus on testing the homepage image centering functionality and navigation bar display. The user is experiencing issues with the cartoon image not appearing centered on the homepage.",
+    "envs": {
+      "API_KEY": "sk-user-TQgtbX-YD00Y5kM6HApXHKSp1YRiYBhKG9X4MUjEZpK7XT8tYscbrSOH-9CPYPMDwvKF4nnsrd1xxJsZ8bSoO6p2GffjDfXlyUoDSNG_JszqrKmHjMTP1tgAocU_247bOBo"
+    }
+  },
+  "proxy": "http://117ae9f0-082a-4af9-b0d3-60d70e646014:iywjRdvnj2ObCr3vxHDlgJ5ibMYvL8t5@tun.testsprite.com:8080"
+}

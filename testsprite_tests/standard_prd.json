@@ -1,0 +1,103 @@
+{
+  "meta": {
+    "project": "Personal Portfolio Website",
+    "date": "2025-08-25",
+    "prepared_by": "Software Development Manager"
+  },
+  "product_overview": "A personal portfolio website with a distinct cartoon/comic style to showcase creative works, professional skills, and portfolio projects. The site aims to provide a playful yet professional online presence with an emphasis on centered and visually appealing layouts.",
+  "core_goals": [
+    "Showcase creative projects and dashboard work with illustrative, cartoon-style design.",
+    "Provide an easy and professional means for recruiters, collaborators, and clients to contact the owner.",
+    "Create a unique and playful site with hand-drawn/cartoon styling consistent across pages.",
+    "Ensure responsive design for desktop and mobile devices.",
+    "Fix current layout issues specifically centering of hero section image and buttons, and navigation bar alignment."
+  ],
+  "key_features": [
+    "Top horizontal navigation bar with centered links: Home, Profile/About Me, Portfolio/My Work, Contact.",
+    "Homepage hero section with a centered cartoon illustration, overlay text, and call-to-action buttons aligned center horizontally and vertically.",
+    "Profile/About page with bio, introduction, and descriptions of skills and creative approach.",
+    "Portfolio/My Work page displaying projects in a grid format, including titles, images, descriptions, and dashboard metrics.",
+    "Contact page with a clean, centered layout and placeholder text, planned enhancement for a contact form.",
+    "Use of reusable UI components like ComicPanel, HalftoneBG, MeteorShower, and SpeechBubble for styling and interactivity.",
+    "Consistent styling with Tailwind CSS, PostCSS, and global styles ensuring a warm, creative cartoon vibe."
+  ],
+  "user_flow_summary": [
+    "User lands on the homepage, sees a centered cartoon hero image with text overlay and buttons to explore portfolio or contact.",
+    "User navigates via the top navigation bar to the Profile/About page to learn more about the owner’s bio and skills.",
+    "User visits the Portfolio/My Work page to browse projects displayed in a grid with images and descriptions.",
+    "User clicks on Contact from navigation to reach the contact page with a placeholder, currently showing 'Content coming soon!', with plans for a contact form later.",
+    "Responsive behavior allows seamless usage on desktop and mobile devices ensuring consistent layout and interaction."
+  ],
+  "validation_criteria": [
+    "Hero section image and call-to-action buttons are horizontally and vertically centered across screen sizes.",
+    "Navigation bar is horizontally aligned and links are centered in the viewport.",
+    "Profile/About page content loads correctly with bio and text sections styled consistently.",
+    "Portfolio/My Work projects display in a grid format with images, titles, and descriptions matching design specifications.",
+    "Contact page loads with centered title and placeholder text visible; layout remains consistent on different devices.",
+    "All UI components render correctly and styles conform to the cartoon/comic theme using Tailwind CSS.",
+    "No layout or alignment issues remain for key pages following fixes, confirmed by visual and functional testing."
+  ],
+  "code_summary": {
+    "tech_stack": [
+      "TypeScript",
+      "Next.js 14.0.0",
+      "React 18",
+      "Tailwind CSS",
+      "PostCSS"
+    ],
+    "features": [
+      {
+        "name": "Navigation Bar",
+        "description": "Horizontal navigation bar with centered links for Home, Portfolio, Shop, About, and Contact",
+        "files": [
+          "src/components/NavBar.tsx",
+          "src/app/layout.tsx"
+        ]
+      },
+      {
+        "name": "Hero Section",
+        "description": "Main homepage section with cartoon image, centered text overlay, and call-to-action buttons",
+        "files": [
+          "src/app/page.tsx"
+        ]
+      },
+      {
+        "name": "Image Display",
+        "description": "Cartoon image (cartoon1.png) that should be centered on the homepage",
+        "files": [
+          "src/app/page.tsx",
+          "public/cartoon1.png"
+        ]
+      },
+      {
+        "name": "Styling System",
+        "description": "Tailwind CSS configuration and global styles for consistent design",
+        "files": [
+          "src/app/globals.css",
+          "tailwind.config.ts",
+          "postcss.config.mjs"
+        ]
+      },
+      {
+        "name": "Page Routing",
+        "description": "Next.js app router with pages for Home, Profile, My Work, and Contact",
+        "files": [
+          "src/app/page.tsx",
+          "src/app/profile/page.tsx",
+          "src/app/my-work/page.tsx",
+          "src/app/contact/page.tsx"
+        ]
+      },
+      {
+        "name": "UI Components",
+        "description": "Reusable UI components including ComicPanel, HalftoneBG, MeteorShower, and SpeechBubble",
+        "files": [
+          "src/components/ComicPanel.tsx",
+          "src/components/HalftoneBG.tsx",
+          "src/components/MeteorShower.tsx",
+          "src/components/SpeechBubble.tsx"
+        ]
+      }
+    ]
+  }
+}
