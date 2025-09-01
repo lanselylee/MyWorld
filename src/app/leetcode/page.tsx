@@ -1,7 +1,6 @@
 'use client';
 
 import { Box, Container, Typography, Card, CardContent } from '@mui/material';
-import Grid from '@mui/material/Grid2';
 import { Code, TrendingUp, Star } from '@mui/icons-material';
 import { useEffect, useState } from 'react';
 
@@ -261,106 +260,105 @@ export default function LeetCodePage() {
         </Typography>
 
         {/* 统计卡片 */}
-        <Grid container spacing={4} sx={{ mb: 8 }}>
-          <Grid xs={12} md={4}>
-            <Card sx={{
-              height: '200px',
-              borderRadius: '16px',
-              background: 'linear-gradient(135deg, #0f3460 0%, #0e4b99 100%)',
-              color: '#00ffff',
-              border: '1px solid rgba(0, 255, 255, 0.2)',
-              boxShadow: '0 8px 32px rgba(0, 255, 255, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.1)',
-              transition: 'all 0.3s ease',
-              '&:hover': {
-                transform: 'translateY(-8px)',
-                boxShadow: '0 12px 40px rgba(0, 255, 255, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.2)',
-                border: '1px solid rgba(0, 255, 255, 0.4)'
-              }
+        <Box sx={{ 
+          display: 'grid', 
+          gridTemplateColumns: { xs: '1fr', md: 'repeat(3, 1fr)' },
+          gap: 4,
+          mb: 8 
+        }}>
+          <Card sx={{
+            height: '200px',
+            borderRadius: '16px',
+            background: 'linear-gradient(135deg, #0f3460 0%, #0e4b99 100%)',
+            color: '#00ffff',
+            border: '1px solid rgba(0, 255, 255, 0.2)',
+            boxShadow: '0 8px 32px rgba(0, 255, 255, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.1)',
+            transition: 'all 0.3s ease',
+            '&:hover': {
+              transform: 'translateY(-8px)',
+              boxShadow: '0 12px 40px rgba(0, 255, 255, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.2)',
+              border: '1px solid rgba(0, 255, 255, 0.4)'
+            }
+          }}>
+            <CardContent sx={{ 
+              height: '100%', 
+              display: 'flex', 
+              flexDirection: 'column', 
+              justifyContent: 'center', 
+              alignItems: 'center' 
             }}>
-              <CardContent sx={{ 
-                height: '100%', 
-                display: 'flex', 
-                flexDirection: 'column', 
-                justifyContent: 'center', 
-                alignItems: 'center' 
-              }}>
-                <Code sx={{ fontSize: '3rem', mb: 2 }} />
-                <Typography variant="h4" sx={{ fontWeight: 600, mb: 1 }}>
-                  150+
-                </Typography>
-                <Typography variant="body1" sx={{ textAlign: 'center' }}>
-                  Problems Solved
-                </Typography>
-              </CardContent>
-            </Card>
-          </Grid>
+              <Code sx={{ fontSize: '3rem', mb: 2 }} />
+              <Typography variant="h4" sx={{ fontWeight: 600, mb: 1 }}>
+                150+
+              </Typography>
+              <Typography variant="body1" sx={{ textAlign: 'center' }}>
+                Problems Solved
+              </Typography>
+            </CardContent>
+          </Card>
 
-          <Grid xs={12} md={4}>
-            <Card sx={{
-              height: '200px',
-              borderRadius: '16px',
-              background: 'linear-gradient(135deg, #4a0e4e 0%, #81126d 100%)',
-              color: '#ff6ec7',
-              border: '1px solid rgba(255, 110, 199, 0.2)',
-              boxShadow: '0 8px 32px rgba(255, 110, 199, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.1)',
-              transition: 'all 0.3s ease',
-              '&:hover': {
-                transform: 'translateY(-8px)',
-                boxShadow: '0 12px 40px rgba(255, 110, 199, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.2)',
-                border: '1px solid rgba(255, 110, 199, 0.4)'
-              }
+          <Card sx={{
+            height: '200px',
+            borderRadius: '16px',
+            background: 'linear-gradient(135deg, #4a0e4e 0%, #81126d 100%)',
+            color: '#ff6ec7',
+            border: '1px solid rgba(255, 110, 199, 0.2)',
+            boxShadow: '0 8px 32px rgba(255, 110, 199, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.1)',
+            transition: 'all 0.3s ease',
+            '&:hover': {
+              transform: 'translateY(-8px)',
+              boxShadow: '0 12px 40px rgba(255, 110, 199, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.2)',
+              border: '1px solid rgba(255, 110, 199, 0.4)'
+            }
+          }}>
+            <CardContent sx={{ 
+              height: '100%', 
+              display: 'flex', 
+              flexDirection: 'column', 
+              justifyContent: 'center', 
+              alignItems: 'center' 
             }}>
-              <CardContent sx={{ 
-                height: '100%', 
-                display: 'flex', 
-                flexDirection: 'column', 
-                justifyContent: 'center', 
-                alignItems: 'center' 
-              }}>
-                <TrendingUp sx={{ fontSize: '3rem', mb: 2 }} />
-                <Typography variant="h4" sx={{ fontWeight: 600, mb: 1 }}>
-                  Medium
-                </Typography>
-                <Typography variant="body1" sx={{ textAlign: 'center' }}>
-                  Current Level
-                </Typography>
-              </CardContent>
-            </Card>
-          </Grid>
+              <TrendingUp sx={{ fontSize: '3rem', mb: 2 }} />
+              <Typography variant="h4" sx={{ fontWeight: 600, mb: 1 }}>
+                Medium
+              </Typography>
+              <Typography variant="body1" sx={{ textAlign: 'center' }}>
+                Current Level
+              </Typography>
+            </CardContent>
+          </Card>
 
-          <Grid xs={12} md={4}>
-            <Card sx={{
-              height: '200px',
-              borderRadius: '16px',
-              background: 'linear-gradient(135deg, #0f4c75 0%, #00a8cc 100%)',
-              color: '#00e6ff',
-              border: '1px solid rgba(0, 230, 255, 0.2)',
-              boxShadow: '0 8px 32px rgba(0, 230, 255, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.1)',
-              transition: 'all 0.3s ease',
-              '&:hover': {
-                transform: 'translateY(-8px)',
-                boxShadow: '0 12px 40px rgba(0, 230, 255, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.2)',
-                border: '1px solid rgba(0, 230, 255, 0.4)'
-              }
+          <Card sx={{
+            height: '200px',
+            borderRadius: '16px',
+            background: 'linear-gradient(135deg, #0f4c75 0%, #00a8cc 100%)',
+            color: '#00e6ff',
+            border: '1px solid rgba(0, 230, 255, 0.2)',
+            boxShadow: '0 8px 32px rgba(0, 230, 255, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.1)',
+            transition: 'all 0.3s ease',
+            '&:hover': {
+              transform: 'translateY(-8px)',
+              boxShadow: '0 12px 40px rgba(0, 230, 255, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.2)',
+              border: '1px solid rgba(0, 230, 255, 0.4)'
+            }
+          }}>
+            <CardContent sx={{ 
+              height: '100%', 
+              display: 'flex', 
+              flexDirection: 'column', 
+              justifyContent: 'center', 
+              alignItems: 'center' 
             }}>
-              <CardContent sx={{ 
-                height: '100%', 
-                display: 'flex', 
-                flexDirection: 'column', 
-                justifyContent: 'center', 
-                alignItems: 'center' 
-              }}>
-                <Star sx={{ fontSize: '3rem', mb: 2 }} />
-                <Typography variant="h4" sx={{ fontWeight: 600, mb: 1 }}>
-                  6 Months
-                </Typography>
-                <Typography variant="body1" sx={{ textAlign: 'center' }}>
-                  Journey Started
-                </Typography>
-              </CardContent>
-            </Card>
-          </Grid>
-        </Grid>
+              <Star sx={{ fontSize: '3rem', mb: 2 }} />
+              <Typography variant="h4" sx={{ fontWeight: 600, mb: 1 }}>
+                6 Months
+              </Typography>
+              <Typography variant="body1" sx={{ textAlign: 'center' }}>
+                Journey Started
+              </Typography>
+            </CardContent>
+          </Card>
+        </Box>
 
         {/* 内容区域 */}
         <Box sx={{

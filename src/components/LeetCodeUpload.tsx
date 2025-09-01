@@ -42,7 +42,7 @@ export default function LeetCodeUpload({ open, onClose, onAdd }: LeetCodeUploadP
     spaceComplexity: '',
     notes: '',
     leetcodeUrl: '',
-    rating: 3 as const
+    rating: 3 as 1|2|3|4|5
   });
   
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
