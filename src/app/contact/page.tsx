@@ -1,9 +1,10 @@
 'use client';
 
-import { Box, Container, Typography, TextField, Button } from '@mui/material';
-import { Email } from '@mui/icons-material';
+import { Box, Container, Typography, TextField, Button, Alert, CircularProgress } from '@mui/material';
+import { Email, CheckCircle } from '@mui/icons-material';
 import { useState } from 'react';
 import Image from 'next/image';
+import emailjs from '@emailjs/browser';
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -12,6 +13,10 @@ export default function ContactPage() {
     email: '',
     message: ''
   });
+  
+  const [isLoading, setIsLoading] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [statusMessage, setStatusMessage] = useState('');
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
@@ -20,10 +25,53 @@ export default function ContactPage() {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log('Form submitted:', formData);
+    
+    if (!formData.email || !formData.firstName) {
+      setSubmitStatus('error');
+      setStatusMessage('请填写必需的字段（姓名和邮箱）');
+      return;
+    }
+
+    setIsLoading(true);
+    setSubmitStatus('idle');
+
+    try {
+      // EmailJS配置 - 需要您在EmailJS.com注册并获取这些参数
+      const templateParams = {
+        from_name: `${formData.firstName} ${formData.lastName}`,
+        from_email: formData.email,
+        message: formData.message,
+        to_name: 'Xiaomen Li', // 您的姓名
+      };
+
+      // 发送邮件
+      await emailjs.send(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || 'service_default',
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || 'template_default',
+        templateParams,
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || 'public_key_default'
+      );
+
+      setSubmitStatus('success');
+      setStatusMessage('消息发送成功！我会尽快回复您。');
+      
+      // 清空表单
+      setFormData({
+        firstName: '',
+        lastName: '',
+        email: '',
+        message: ''
+      });
+
+    } catch (error) {
+      console.error('邮件发送失败:', error);
+      setSubmitStatus('error');
+      setStatusMessage('发送失败，请稍后重试或直接发送邮件到 Li.xiaomen@northeastern.edu');
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -233,11 +281,30 @@ export default function ContactPage() {
             />
           </Box>
 
+          {/* 状态提示 */}
+          {submitStatus !== 'idle' && (
+            <Box sx={{ mb: 2 }}>
+              <Alert 
+                severity={submitStatus === 'success' ? 'success' : 'error'}
+                icon={submitStatus === 'success' ? <CheckCircle /> : undefined}
+                sx={{
+                  borderRadius: '8px',
+                  '& .MuiAlert-message': {
+                    fontSize: '0.9rem'
+                  }
+                }}
+              >
+                {statusMessage}
+              </Alert>
+            </Box>
+          )}
+
           {/* 提交按钮 */}
           <Box sx={{ display: 'flex', justifyContent: 'flex-end', mb: 3 }}>
             <Button
               type="submit"
               variant="outlined"
+              disabled={isLoading}
               sx={{
                 px: 3,
                 py: 1,
@@ -248,13 +315,31 @@ export default function ContactPage() {
                 fontSize: '0.9rem',
                 fontWeight: 400,
                 textTransform: 'none',
+                position: 'relative',
                 '&:hover': {
                   borderColor: '#1a1a1a',
                   backgroundColor: '#f8f9fa'
+                },
+                '&:disabled': {
+                  borderColor: '#9ca3af',
+                  color: '#9ca3af'
                 }
               }}
             >
-              Send
+              {isLoading ? (
+                <>
+                  <CircularProgress 
+                    size={16} 
+                    sx={{ 
+                      mr: 1,
+                      color: '#9ca3af'
+                    }} 
+                  />
+                  发送中...
+                </>
+              ) : (
+                'Send'
+              )}
             </Button>
           </Box>
         </Box>
